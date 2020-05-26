@@ -48,6 +48,16 @@ def shuffle(sp, arg_list):
         sp.shuffle(state=True)
     return None
 
+# reshuffles current playback
+def shuffle(sp, arg_list):
+    if len(arg_list) > 1:
+        return "bad usage!"
+    else:
+        sp.shuffle(state=False)
+        sp.shuffle(state=True)
+        sp.next_track()
+    return None
+
 ''' start or resume a user's playback
     options
         (none) -> resume playback
@@ -61,11 +71,19 @@ def play(sp, arg_list):
     if len(arg_list) > 1:
         print("in progress!")
 
+<<<<<<< HEAD
         '''play_options = { 'shuffle':,
                          'track':,
                          'playlist':,
                          'radio':,
                          'album':}'''
+=======
+        play_options = { 'shuffle':,
+                         'track':,
+                         'playlist':,
+                         'radio':,
+                         'album':}
+>>>>>>> 262b6248da2ac6bb3804dfcef2b6ffefea779560
     else:
         sp.start_playback()
     return None
